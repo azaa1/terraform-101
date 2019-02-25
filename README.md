@@ -41,6 +41,20 @@ NOTE: The above is not recommended for real environment. This is just to practic
    
   * Run : wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
   
+  -This will get the official .zip file from www.terraform.io , the specific version v0.11.11
+  
+  * Run : unzip terraform_0.11.11_linux_amd64.zip
+  
+  -This will unzip the file. 
+  
+  * Run: mv  terraform  /bin/
+  
+  -This will move terraform to /bin/ folder. 
+  
+  * Run : terraform -verion 
+  
+  -The output should be:  Terraform v0.11.11
+
 
 
 
