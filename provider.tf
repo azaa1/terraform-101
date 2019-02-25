@@ -3,7 +3,7 @@ provider "aws" {
 }
 terraform {
   backend "s3" {
-    bucket = "november-terraform-bucket1"
+    bucket = "mysample-terraform-bucket"
     key    = "dev/tfstate"
     region = "us-east-1"
   }
