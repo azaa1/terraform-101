@@ -78,31 +78,49 @@ NOTE: The above is not recommended for real environment. This is just to practic
    
    * Some terraform commands: 
    
-   - terraform init           Initialize a Terraform working directory
+   - terraform init           -Initialize a Terraform working directory
 
-   - terraform plan           Generate and show an execution plan 
+   - terraform plan           -Generate and show an execution plan 
 
-   - terraform apply          Builds or changes infrastructure
+   - terraform apply          -Builds or changes infrastructure
    
-   - terraform destroy        Destroy Terraform-managed infrastructure
+   - terraform destroy        -Destroy Terraform-managed infrastructure
    
-   - terraform show           Inspect Terraform state or plan
+   - terraform show           -Inspect Terraform state or plan
    
-   - terraform  fmt           Rewrites config files to canonical format 
+   - terraform  fmt           -Rewrites config files to canonical format 
    
-   - terraform validate       Validates the Terraform files
+   - terraform validate       -Validates the Terraform files
 
 
-   #### 3. Modify the files. 
+  #### 3. Modify the files. 
   
- #####  * Note: You need to modify the following files before you run 'terraform init'
+  #####  * Note: You need to modify the following files before you run 'terraform init'
             
             - on provider.tf file 
             
                   * region =  change this line to the region where you want to create your resources. 
                   * bucket =  name of your bucket
                   * region =  the region where you created your bucket
-                   
+   
+   #### 4. What do the files do? 
+   
+  * provider.tf   - This file tells Terraform which provider you are using, and in which region the resources to create. 
+                  
+                  * NOTE: by default terraform saves the terraform.state file on the directory your working directory. 
+                  
+                  The 'backend' section instructs terraform to save the file in S3 bucket. 
+  
+  * user.tf       - Creates a user named 'test-user'
+  
+  * group.tf      - Creates a group named 'developers'
+  
+  * instance.tf   - Creates an EC2-Instance, and saves the key 'test-key' for ssh purpose. 
+
+                     * NOTE: you need to change the 'ami' based on your need. 
+                  
+  * null-resource.tf
+   
    #### 5. Create Resources on AWS. 
 
 *  First you need to initialize Terraform
