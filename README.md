@@ -117,9 +117,12 @@ NOTE: The above is not recommended for real environment. This is just to practic
   
   * instance.tf   - Creates an EC2-Instance, and saves the key 'test-key' for ssh purpose. 
 
-                     * NOTE: you need to change the 'ami' based on your need. 
+                    
+                    * NOTE: you need to change the 'ami' based on your need. 
+                     
                   
-  * null-resource.tf
+  * null-resource.tf - Connects to EC2-Instance, installs 'telnet' and 'APACHE' on the Instance. 
+  
    
    #### 5. Create Resources on AWS. 
 
